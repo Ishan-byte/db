@@ -43,6 +43,6 @@ jobs:
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "- **Deployer** - <img src='${actual_url}' width="20"> ${{ github.actor }} :technologist:" >> $GITHUB_STEP_SUMMARY
           echo "- **Branch** - ${{ github.ref_name }} :evergreen_tree:" >> $GITHUB_STEP_SUMMARY
-          echo "- **Environment** -${{ github.events.inputs.environment }} :octocat:" >> $GITHUB_STEP_SUMMARY
+          echo "- **Environment** -${{ github.events.inputs.environment || github.base_ref }} :octocat:" >> $GITHUB_STEP_SUMMARY
 
 
