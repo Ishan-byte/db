@@ -29,12 +29,20 @@ on:
       - main
       - dev
       - staging
-    
+   
 jobs:
   trigger_info:
     runs-on: ubuntu-latest
-
-
-
+    steps: 
+      - name: Info
+        run: |
+          avatar_url=${{ github.event.sender.avatar_url }}
+          actual_url="https://avatars.githubusercontent.com/u/${avatar_url:40:100}"
+          
+          echo "### DEPLOYMENT INFO :rocket:" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "- **Deployer** - <img src='${actual_url}' width="20"> ${{ github.actor }} :technologist:" >> $GITHUB_STEP_SUMMARY
+          echo "- **Branch** - ${{ github.ref_name }} :evergreen_tree:" >> $GITHUB_STEP_SUMMARY
+          echo "- **Environment** -${{ github.events.inputs.environment || github.base_ref }} :octocat:" >> $GITHUB_STEP_SUMMARY
 
 
