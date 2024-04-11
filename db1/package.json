@@ -1,0 +1,16 @@
+{
+  "name": "db1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "prettify": "prettier --write ./*.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "knex": "^3.1.0",
+    "prettier": "^3.2.5"
+  }
+}

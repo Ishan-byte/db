@@ -1,0 +1,40 @@
+# Main Workflow
+#
+#
+
+name: The Workflow
+
+on:
+  workflow_dispatch:
+    inputs:
+      database:
+        description: Database 
+        type: choice
+        options:
+          - db1
+          - db2
+          - db3
+
+    environment:
+      description: Environment
+      type: choice
+      options:
+        - dev
+        - stg
+        - prod 
+
+  pull_request:
+    types: [synchronize, closed, opened]
+    branches:
+      - main
+      - dev
+      - staging
+    
+jobs:
+  trigger_info:
+    runs-on: ubuntu-latest
+
+
+
+
+
